@@ -57,6 +57,10 @@ public class principal extends javax.swing.JFrame {
         tf_dinero = new javax.swing.JTextField();
         boton_guardar = new javax.swing.JButton();
         panel_eliminar = new javax.swing.JPanel();
+        panel_modificar = new javax.swing.JPanel();
+        panel_reportes = new javax.swing.JPanel();
+        panel_ventas = new javax.swing.JPanel();
+        panel_rifas = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -262,6 +266,32 @@ public class principal extends javax.swing.JFrame {
 
         tab_administracion.addTab("eliminar", panel_eliminar);
 
+        javax.swing.GroupLayout panel_modificarLayout = new javax.swing.GroupLayout(panel_modificar);
+        panel_modificar.setLayout(panel_modificarLayout);
+        panel_modificarLayout.setHorizontalGroup(
+            panel_modificarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 611, Short.MAX_VALUE)
+        );
+        panel_modificarLayout.setVerticalGroup(
+            panel_modificarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 401, Short.MAX_VALUE)
+        );
+
+        tab_administracion.addTab("modificar", panel_modificar);
+
+        javax.swing.GroupLayout panel_reportesLayout = new javax.swing.GroupLayout(panel_reportes);
+        panel_reportes.setLayout(panel_reportesLayout);
+        panel_reportesLayout.setHorizontalGroup(
+            panel_reportesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 611, Short.MAX_VALUE)
+        );
+        panel_reportesLayout.setVerticalGroup(
+            panel_reportesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 401, Short.MAX_VALUE)
+        );
+
+        tab_administracion.addTab("reportes", panel_reportes);
+
         javax.swing.GroupLayout panel_adiministracionLayout = new javax.swing.GroupLayout(panel_adiministracion);
         panel_adiministracion.setLayout(panel_adiministracionLayout);
         panel_adiministracionLayout.setHorizontalGroup(
@@ -280,6 +310,32 @@ public class principal extends javax.swing.JFrame {
         );
 
         tab_principal.addTab("adiministracion", panel_adiministracion);
+
+        javax.swing.GroupLayout panel_ventasLayout = new javax.swing.GroupLayout(panel_ventas);
+        panel_ventas.setLayout(panel_ventasLayout);
+        panel_ventasLayout.setHorizontalGroup(
+            panel_ventasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 636, Short.MAX_VALUE)
+        );
+        panel_ventasLayout.setVerticalGroup(
+            panel_ventasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 451, Short.MAX_VALUE)
+        );
+
+        tab_principal.addTab("Ventas", panel_ventas);
+
+        javax.swing.GroupLayout panel_rifasLayout = new javax.swing.GroupLayout(panel_rifas);
+        panel_rifas.setLayout(panel_rifasLayout);
+        panel_rifasLayout.setHorizontalGroup(
+            panel_rifasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 636, Short.MAX_VALUE)
+        );
+        panel_rifasLayout.setVerticalGroup(
+            panel_rifasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 451, Short.MAX_VALUE)
+        );
+
+        tab_principal.addTab("Rifas", panel_rifas);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -317,14 +373,20 @@ public class principal extends javax.swing.JFrame {
         String ID_loteria;
         String departamento;
         int dinero;
-        edad = Integer.parseInt(tf_edad.getText());
-        dinero = Integer.parseInt(tf_dinero.getText());
-        nombre = tf_nombre.getText();
-        ID=tf_id.getText();
-        ID_loteria=tf_boleto.getText();
-        departamento = cb_departamento.getSelectedItem().toString();
-        lista.add(new persona(nombre,edad,ID,ID_loteria,departamento,dinero));
-        JOptionPane.showMessageDialog(this, "Se guardo con exito");
+        try {
+            edad = Integer.parseInt(tf_edad.getText());
+            dinero = Integer.parseInt(tf_dinero.getText());
+            nombre = tf_nombre.getText();
+            ID = tf_id.getText();
+            ID_loteria = tf_boleto.getText();
+            departamento = cb_departamento.getSelectedItem().toString();
+            lista.add(new persona(nombre, edad, ID, ID_loteria, departamento, dinero));
+            JOptionPane.showMessageDialog(this, "Se guardo con exito");
+        } catch (Exception e) {
+            e.printStackTrace();
+            JOptionPane.showMessageDialog(null, "Ocurrio un error y no se guardaron los datos");
+
+        }
     }//GEN-LAST:event_boton_guardarMouseClicked
 
     /**
@@ -379,7 +441,11 @@ public class principal extends javax.swing.JFrame {
     private javax.swing.JPanel panel_agregar;
     private javax.swing.JPanel panel_alumno;
     private javax.swing.JPanel panel_eliminar;
+    private javax.swing.JPanel panel_modificar;
     private javax.swing.JPanel panel_politico;
+    private javax.swing.JPanel panel_reportes;
+    private javax.swing.JPanel panel_rifas;
+    private javax.swing.JPanel panel_ventas;
     private javax.swing.JTabbedPane tab_administracion;
     private javax.swing.JTabbedPane tab_persona;
     private javax.swing.JTabbedPane tab_principal;
