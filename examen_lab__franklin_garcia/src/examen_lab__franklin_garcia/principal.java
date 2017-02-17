@@ -5,6 +5,9 @@
  */
 package examen_lab__franklin_garcia;
 
+import java.util.ArrayList;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Franklin Garcia
@@ -27,21 +30,302 @@ public class principal extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        tab_principal = new javax.swing.JTabbedPane();
+        panel_adiministracion = new javax.swing.JPanel();
+        tab_administracion = new javax.swing.JTabbedPane();
+        panel_agregar = new javax.swing.JPanel();
+        tab_persona = new javax.swing.JTabbedPane();
+        panel_alumno = new javax.swing.JPanel();
+        jLabel7 = new javax.swing.JLabel();
+        tf_carrera = new javax.swing.JTextField();
+        panel_politico = new javax.swing.JPanel();
+        cb_partido = new javax.swing.JComboBox<>();
+        empleado = new javax.swing.JPanel();
+        jLabel8 = new javax.swing.JLabel();
+        tf_empleado = new javax.swing.JTextField();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        tf_edad = new javax.swing.JTextField();
+        tf_nombre = new javax.swing.JTextField();
+        jLabel3 = new javax.swing.JLabel();
+        tf_id = new javax.swing.JTextField();
+        jLabel4 = new javax.swing.JLabel();
+        tf_boleto = new javax.swing.JTextField();
+        jLabel5 = new javax.swing.JLabel();
+        cb_departamento = new javax.swing.JComboBox<>();
+        jLabel6 = new javax.swing.JLabel();
+        tf_dinero = new javax.swing.JTextField();
+        boton_guardar = new javax.swing.JButton();
+        panel_eliminar = new javax.swing.JPanel();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        jLabel7.setText("Carrera");
+
+        javax.swing.GroupLayout panel_alumnoLayout = new javax.swing.GroupLayout(panel_alumno);
+        panel_alumno.setLayout(panel_alumnoLayout);
+        panel_alumnoLayout.setHorizontalGroup(
+            panel_alumnoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panel_alumnoLayout.createSequentialGroup()
+                .addGap(21, 21, 21)
+                .addComponent(jLabel7)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 59, Short.MAX_VALUE)
+                .addComponent(tf_carrera, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
+        );
+        panel_alumnoLayout.setVerticalGroup(
+            panel_alumnoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panel_alumnoLayout.createSequentialGroup()
+                .addGap(32, 32, 32)
+                .addGroup(panel_alumnoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel7)
+                    .addComponent(tf_carrera, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(238, Short.MAX_VALUE))
+        );
+
+        tab_persona.addTab("alumno", panel_alumno);
+
+        cb_partido.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Nacional", "Liberal", "Pac", "Resistencia" }));
+
+        javax.swing.GroupLayout panel_politicoLayout = new javax.swing.GroupLayout(panel_politico);
+        panel_politico.setLayout(panel_politicoLayout);
+        panel_politicoLayout.setHorizontalGroup(
+            panel_politicoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panel_politicoLayout.createSequentialGroup()
+                .addGap(58, 58, 58)
+                .addComponent(cb_partido, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(68, Short.MAX_VALUE))
+        );
+        panel_politicoLayout.setVerticalGroup(
+            panel_politicoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panel_politicoLayout.createSequentialGroup()
+                .addGap(70, 70, 70)
+                .addComponent(cb_partido, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(195, Short.MAX_VALUE))
+        );
+
+        tab_persona.addTab("politico", panel_politico);
+
+        jLabel8.setText("Ingrese su empleo");
+
+        javax.swing.GroupLayout empleadoLayout = new javax.swing.GroupLayout(empleado);
+        empleado.setLayout(empleadoLayout);
+        empleadoLayout.setHorizontalGroup(
+            empleadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(empleadoLayout.createSequentialGroup()
+                .addGroup(empleadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(empleadoLayout.createSequentialGroup()
+                        .addGap(69, 69, 69)
+                        .addComponent(jLabel8))
+                    .addGroup(empleadoLayout.createSequentialGroup()
+                        .addGap(26, 26, 26)
+                        .addComponent(tf_empleado, javax.swing.GroupLayout.PREFERRED_SIZE, 209, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(38, Short.MAX_VALUE))
+        );
+        empleadoLayout.setVerticalGroup(
+            empleadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(empleadoLayout.createSequentialGroup()
+                .addGap(50, 50, 50)
+                .addComponent(jLabel8)
+                .addGap(18, 18, 18)
+                .addComponent(tf_empleado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(236, Short.MAX_VALUE))
+        );
+
+        tab_persona.addTab("empleado", empleado);
+
+        jLabel1.setText("Nombre");
+
+        jLabel2.setText("Edad");
+
+        tf_nombre.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tf_nombreActionPerformed(evt);
+            }
+        });
+
+        jLabel3.setText("ID");
+
+        tf_id.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tf_idActionPerformed(evt);
+            }
+        });
+
+        jLabel4.setText("ID Boleto");
+
+        jLabel5.setText("Departamento");
+
+        cb_departamento.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "La Paz", "Francisco Morazan", "Olancho", "Intibuca", "Lempira", "Ocotepeque", "Choluteca", "Atlantida", "Cortes", "Gracias a Dios", "Copan", "El Paraiso", "Valle", "Comayagua", "Yoro", "Islas de la Bahia", "Colon", " " }));
+
+        jLabel6.setText("Dinero");
+
+        tf_dinero.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tf_dineroActionPerformed(evt);
+            }
+        });
+
+        boton_guardar.setText("Guardar");
+        boton_guardar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                boton_guardarMouseClicked(evt);
+            }
+        });
+
+        javax.swing.GroupLayout panel_agregarLayout = new javax.swing.GroupLayout(panel_agregar);
+        panel_agregar.setLayout(panel_agregarLayout);
+        panel_agregarLayout.setHorizontalGroup(
+            panel_agregarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panel_agregarLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(panel_agregarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(panel_agregarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(panel_agregarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addGroup(panel_agregarLayout.createSequentialGroup()
+                                .addGroup(panel_agregarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jLabel3))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(panel_agregarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(tf_edad)
+                                    .addComponent(tf_nombre)
+                                    .addComponent(tf_id, javax.swing.GroupLayout.DEFAULT_SIZE, 132, Short.MAX_VALUE)))
+                            .addGroup(panel_agregarLayout.createSequentialGroup()
+                                .addComponent(jLabel4)
+                                .addGap(18, 18, 18)
+                                .addComponent(tf_boleto))
+                            .addGroup(panel_agregarLayout.createSequentialGroup()
+                                .addComponent(jLabel5)
+                                .addGap(18, 18, 18)
+                                .addComponent(cb_departamento, 0, 105, Short.MAX_VALUE)))
+                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panel_agregarLayout.createSequentialGroup()
+                            .addComponent(jLabel6)
+                            .addGap(28, 28, 28)
+                            .addComponent(tf_dinero, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(boton_guardar, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 121, Short.MAX_VALUE)
+                .addComponent(tab_persona, javax.swing.GroupLayout.PREFERRED_SIZE, 278, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
+        );
+        panel_agregarLayout.setVerticalGroup(
+            panel_agregarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panel_agregarLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(panel_agregarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(panel_agregarLayout.createSequentialGroup()
+                        .addComponent(tab_persona)
+                        .addGap(24, 24, 24))
+                    .addGroup(panel_agregarLayout.createSequentialGroup()
+                        .addGroup(panel_agregarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(tf_edad, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, panel_agregarLayout.createSequentialGroup()
+                                .addGroup(panel_agregarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(tf_nombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(jLabel2)))
+                        .addGap(18, 18, 18)
+                        .addGroup(panel_agregarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel3)
+                            .addComponent(tf_id, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(panel_agregarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel4)
+                            .addComponent(tf_boleto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addGroup(panel_agregarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel5)
+                            .addComponent(cb_departamento, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addGroup(panel_agregarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel6)
+                            .addComponent(tf_dinero, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(boton_guardar, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(35, 35, 35))))
+        );
+
+        tab_administracion.addTab("agregar", panel_agregar);
+
+        javax.swing.GroupLayout panel_eliminarLayout = new javax.swing.GroupLayout(panel_eliminar);
+        panel_eliminar.setLayout(panel_eliminarLayout);
+        panel_eliminarLayout.setHorizontalGroup(
+            panel_eliminarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+        panel_eliminarLayout.setVerticalGroup(
+            panel_eliminarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+
+        tab_administracion.addTab("eliminar", panel_eliminar);
+
+        javax.swing.GroupLayout panel_adiministracionLayout = new javax.swing.GroupLayout(panel_adiministracion);
+        panel_adiministracion.setLayout(panel_adiministracionLayout);
+        panel_adiministracionLayout.setHorizontalGroup(
+            panel_adiministracionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panel_adiministracionLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(tab_administracion)
+                .addContainerGap())
+        );
+        panel_adiministracionLayout.setVerticalGroup(
+            panel_adiministracionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panel_adiministracionLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(tab_administracion)
+                .addContainerGap())
+        );
+
+        tab_principal.addTab("adiministracion", panel_adiministracion);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(tab_principal)
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addComponent(tab_principal, javax.swing.GroupLayout.Alignment.TRAILING)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void tf_nombreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tf_nombreActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tf_nombreActionPerformed
+
+    private void tf_idActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tf_idActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tf_idActionPerformed
+
+    private void tf_dineroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tf_dineroActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tf_dineroActionPerformed
+
+    private void boton_guardarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_boton_guardarMouseClicked
+        String nombre;
+        int edad;
+        String ID;
+        String ID_loteria;
+        String departamento;
+        int dinero;
+        edad = Integer.parseInt(tf_edad.getText());
+        dinero = Integer.parseInt(tf_dinero.getText());
+        nombre = tf_nombre.getText();
+        ID=tf_id.getText();
+        ID_loteria=tf_boleto.getText();
+        departamento = cb_departamento.getSelectedItem().toString();
+        lista.add(new persona(nombre,edad,ID,ID_loteria,departamento,dinero));
+        JOptionPane.showMessageDialog(this, "Se guardo con exito");
+    }//GEN-LAST:event_boton_guardarMouseClicked
 
     /**
      * @param args the command line arguments
@@ -79,5 +363,33 @@ public class principal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton boton_guardar;
+    private javax.swing.JComboBox<String> cb_departamento;
+    private javax.swing.JComboBox<String> cb_partido;
+    private javax.swing.JPanel empleado;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JPanel panel_adiministracion;
+    private javax.swing.JPanel panel_agregar;
+    private javax.swing.JPanel panel_alumno;
+    private javax.swing.JPanel panel_eliminar;
+    private javax.swing.JPanel panel_politico;
+    private javax.swing.JTabbedPane tab_administracion;
+    private javax.swing.JTabbedPane tab_persona;
+    private javax.swing.JTabbedPane tab_principal;
+    private javax.swing.JTextField tf_boleto;
+    private javax.swing.JTextField tf_carrera;
+    private javax.swing.JTextField tf_dinero;
+    private javax.swing.JTextField tf_edad;
+    private javax.swing.JTextField tf_empleado;
+    private javax.swing.JTextField tf_id;
+    private javax.swing.JTextField tf_nombre;
     // End of variables declaration//GEN-END:variables
+ArrayList<persona> lista = new ArrayList();
 }

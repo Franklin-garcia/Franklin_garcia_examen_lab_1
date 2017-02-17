@@ -9,6 +9,29 @@ package examen_lab__franklin_garcia;
  *
  * @author Franklin Garcia
  */
-public class estudiantes {
+public class estudiantes extends persona{
+    protected String carrera;
+
+    public estudiantes() {
+        super();
+    }
+
+    public estudiantes(String carrera, String nombre, int edad, String ID, String ID_loteria, String departamento, int dinero) {
+        super(nombre, edad, ID, ID_loteria, departamento, dinero);
+        this.carrera = carrera;
+    }
+
+    public String getCarrera() {
+        return carrera;
+    }
+
+    public void setCarrera(String carrera) {
+        this.carrera = carrera;
+    }
+
+    @Override
+    public String toString() {
+        return super.toString()+"estudiantes{" + "carrera=" + carrera + '}';
+    }
     
 }
