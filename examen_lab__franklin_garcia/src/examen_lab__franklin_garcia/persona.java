@@ -80,7 +80,7 @@ public class persona {
 
     @Override
     public String toString() {
-        return "persona{" + "nombre=" + nombre + ", edad=" + edad + ", ID=" + ID + ", ID_loteria=" + ID_loteria + ", departamento=" + departamento + ", dinero=" + dinero + '}';
+        return nombre;
     }
     
 }

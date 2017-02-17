@@ -31,7 +31,7 @@ public class empleados extends persona{
 
     @Override
     public String toString() {
-        return super.toString()+"empleados{" + "empleo=" + empleo + '}';
+        return nombre;
     }
     
 }
